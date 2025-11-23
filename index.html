@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АИС "Продажа компьютеров"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">АИС "Продажа компьютеров"</div>
+                <nav>
+                    <ul>
+                        <li><a href="#categories">Каталог</a></li>
+                        <li><a href="#process">Как заказать</a></li>
+                        <li><a href="#order">Оформить заказ</a></li>
+                        <li><a href="#status">Статус заказа</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный баннер -->
+    <section class="hero">
+        <div class="container">
+            <h1>Продажа компьютеров с установкой ПО</h1>
+            <p>Выберите подходящую конфигурацию, оформите заказ и получите компьютер с предустановленным программным обеспечением</p>
+            <a href="#order" class="btn">Оформить заказ</a>
+        </div>
+    </section>
+
+    <!-- Категории компьютеров -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">Категории компьютеров</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <span>Изображение сервера</span>
+                    </div>
+                    <div class="category-content">
+                        <h3>Серверы</h3>
+                        <p>Мощные серверные решения для бизнеса и организаций</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <span>Изображение настольного ПК</span>
+                    </div>
+                    <div class="category-content">
+                        <h3>Настольные компьютеры</h3>
+                        <p>Стационарные ПК для дома и офиса</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <span>Изображение ноутбука</span>
+                    </div>
+                    <div class="category-content">
+                        <h3>Портативные компьютеры</h3>
+                        <p>Ноутбуки и ультрабуки для мобильной работы</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <span>Изображение КПК</span>
+                    </div>
+                    <div class="category-content">
+                        <h3>Карманные компьютеры</h3>
+                        <p>Компактные устройства для работы в пути</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Процесс заказа -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">Как оформить заказ</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Выбор компьютера</h3>
+                    <p>Выберите подходящую конфигурацию компьютера из каталога</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Оформление заказа</h3>
+                    <p>Заполните форму с адресом доставки и данными для оплаты</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Подтверждение</h3>
+                    <p>Получите подтверждение заказа по электронной почте</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Доставка и оплата</h3>
+                    <p>Оплатите заказ при получении или банковским переводом</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма заказа -->
+    <section id="order" class="order-form">
+        <div class="container">
+            <h2 class="section-title">Оформление заказа</h2>
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="computer-type">Тип компьютера</label>
+                        <select id="computer-type" name="computer-type">
+                            <option value="">Выберите тип компьютера</option>
+                            <option value="server">Сервер</option>
+                            <option value="desktop">Настольный компьютер</option>
+                            <option value="laptop">Портативный компьютер</option>
+                            <option value="pocket">Карманный компьютер</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="configuration">Конфигурация</label>
+                        <textarea id="configuration" name="configuration" rows="4" placeholder="Опишите желаемую конфигурацию компьютера"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">ФИО</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Электронная почта</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delivery-address">Адрес доставки</label>
+                        <textarea id="delivery-address" name="delivery-address" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="invoice-address">Адрес для счета-фактуры</label>
+                        <textarea id="invoice-address" name="invoice-address" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Способ оплаты</label>
+                        <div>
+                            <input type="radio" id="cash" name="payment" value="cash" checked>
+                            <label for="cash">Наличными курьеру</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="bank" name="payment" value="bank">
+                            <label for="bank">Банковским переводом</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="software">Необходимое ПО</label>
+                        <textarea id="software" name="software" rows="3" placeholder="Укажите необходимое программное обеспечение"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Отправить заказ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статус заказа -->
+    <section id="status" class="order-status">
+        <div class="container">
+            <h2 class="section-title">Проверка статуса заказа</h2>
+            <div class="status-container">
+                <div class="status-check">
+                    <input type="text" placeholder="Введите номер заказа">
+                    <button>Проверить</button>
+                </div>
+                
+                <div class="status-timeline">
+                    <div class="status-step completed">
+                        <h3>Заказ получен</h3>
+                        <p>Заказ принят и ожидает обработки</p>
+                    </div>
+                    <div class="status-step active">
+                        <h3>Ожидание оплаты</h3>
+                        <p>Ожидается поступление оплаты</p>
+                    </div>
+                    <div class="status-step">
+                        <h3>Поставлен в очередь</h3>
+                        <p>Заказ поставлен в очередь на сборку</p>
+                    </div>
+                    <div class="status-step">
+                        <h3>Собран</h3>
+                        <p>Компьютер собран и готов к отправке</p>
+                    </div>
+                    <div class="status-step">
+                        <h3>Отправлен</h3>
+                        <p>Заказ отправлен клиенту</p>
+                    </div>
+                    <div class="status-step">
+                        <h3>Выполнен</h3>
+                        <p>Заказ завершен</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+                    <p>Email: info@computer-sales.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Часы работы</h3>
+                    <p>Пн-Пт: 9:00 - 18:00</p>
+                    <p>Сб-Вс: 10:00 - 16:00</p>
+                </div>
+                <div class="footer-section">
+                    <h3>О нас</h3>
+                    <p>Продажа компьютеров с установкой ПО с 2010 года</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 АИС "Продажа компьютеров". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
