@@ -3,244 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>АИС "Продажа компьютеров"</title>
+    <title>АИС «Продажа компьютеров»</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Шапка сайта -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">АИС "Продажа компьютеров"</div>
-                <nav>
-                    <ul>
-                        <li><a href="#categories">Каталог</a></li>
-                        <li><a href="#process">Как заказать</a></li>
-                        <li><a href="#order">Оформить заказ</a></li>
-                        <li><a href="#status">Статус заказа</a></li>
-                    </ul>
-                </nav>
+    <div id="app">
+        <!-- Шапка с авторизацией -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-laptop"></i>
+                <h1>Компьютерный магазин</h1>
             </div>
-        </div>
-    </header>
-
-    <!-- Главный баннер -->
-    <section class="hero">
-        <div class="container">
-            <h1>Продажа компьютеров с установкой ПО</h1>
-            <p>Выберите подходящую конфигурацию, оформите заказ и получите компьютер с предустановленным программным обеспечением</p>
-            <a href="#order" class="btn">Оформить заказ</a>
-        </div>
-    </section>
-
-    <!-- Категории компьютеров -->
-    <section id="categories" class="categories">
-        <div class="container">
-            <h2 class="section-title">Категории компьютеров</h2>
-            <div class="category-grid">
-                <div class="category-card">
-                    <div class="category-img">
-                        <span>Изображение сервера</span>
-                    </div>
-                    <div class="category-content">
-                        <h3>Серверы</h3>
-                        <p>Мощные серверные решения для бизнеса и организаций</p>
-                    </div>
+            <div class="user-info">
+                <div id="login-section">
+                    <select id="user-select">
+                        <option value="">Выберите пользователя</option>
+                        <option value="client_1">Клиент: Иван Петров</option>
+                        <option value="client_2">Клиент: Мария Сидорова</option>
+                        <option value="manager_1">Менеджер: Алексей Смирнов</option>
+                        <option value="manager_2">Менеджер: Ольга Ковалева</option>
+                    </select>
+                    <button id="login-btn" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Войти
+                    </button>
                 </div>
-                <div class="category-card">
-                    <div class="category-img">
-                        <span>Изображение настольного ПК</span>
-                    </div>
-                    <div class="category-content">
-                        <h3>Настольные компьютеры</h3>
-                        <p>Стационарные ПК для дома и офиса</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-img">
-                        <span>Изображение ноутбука</span>
-                    </div>
-                    <div class="category-content">
-                        <h3>Портативные компьютеры</h3>
-                        <p>Ноутбуки и ультрабуки для мобильной работы</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-img">
-                        <span>Изображение КПК</span>
-                    </div>
-                    <div class="category-content">
-                        <h3>Карманные компьютеры</h3>
-                        <p>Компактные устройства для работы в пути</p>
-                    </div>
+                <div id="logout-section" class="hidden">
+                    <span id="current-user"></span>
+                    <button id="logout-btn" class="btn btn-secondary">
+                        <i class="fas fa-sign-out-alt"></i> Выйти
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Процесс заказа -->
-    <section id="process" class="process">
-        <div class="container">
-            <h2 class="section-title">Как оформить заказ</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Выбор компьютера</h3>
-                    <p>Выберите подходящую конфигурацию компьютера из каталога</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Оформление заказа</h3>
-                    <p>Заполните форму с адресом доставки и данными для оплаты</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Подтверждение</h3>
-                    <p>Получите подтверждение заказа по электронной почте</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Доставка и оплата</h3>
-                    <p>Оплатите заказ при получении или банковским переводом</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Форма заказа -->
-    <section id="order" class="order-form">
-        <div class="container">
-            <h2 class="section-title">Оформление заказа</h2>
-            <div class="form-container">
-                <form>
-                    <div class="form-group">
-                        <label for="computer-type">Тип компьютера</label>
-                        <select id="computer-type" name="computer-type">
-                            <option value="">Выберите тип компьютера</option>
+        <!-- Основной контент -->
+        <main class="main-content">
+            <!-- Панель фильтров -->
+            <aside class="sidebar">
+                <div class="filters">
+                    <h3><i class="fas fa-filter"></i> Фильтры</h3>
+                    
+                    <div class="filter-group">
+                        <label>Тип компьютера:</label>
+                        <select id="filter-type" class="filter-select">
+                            <option value="">Все</option>
                             <option value="server">Сервер</option>
-                            <option value="desktop">Настольный компьютер</option>
-                            <option value="laptop">Портативный компьютер</option>
-                            <option value="pocket">Карманный компьютер</option>
+                            <option value="desktop">Настольный</option>
+                            <option value="laptop">Портативный</option>
+                            <option value="tablet">Планшет</option>
                         </select>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="configuration">Конфигурация</label>
-                        <textarea id="configuration" name="configuration" rows="4" placeholder="Опишите желаемую конфигурацию компьютера"></textarea>
+                    <div class="filter-group">
+                        <label>Статус заказа (для менеджера):</label>
+                        <select id="filter-status" class="filter-select">
+                            <option value="">Все</option>
+                            <option value="pending">Ожидает оплаты</option>
+                            <option value="processing">В обработке</option>
+                            <option value="assembling">Собирается</option>
+                            <option value="installing">Установка ПО</option>
+                            <option value="shipped">Отправлен</option>
+                            <option value="delivered">Доставлен</option>
+                            <option value="completed">Выполнен</option>
+                            <option value="cancelled">Отменен</option>
+                        </select>
                     </div>
                     
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">ФИО</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Электронная почта</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
+                    <div class="filter-group">
+                        <label>Способ оплаты (для менеджера):</label>
+                        <select id="filter-payment" class="filter-select">
+                            <option value="">Все</option>
+                            <option value="cash">Наличные</option>
+                            <option value="bank">Банковский перевод</option>
+                        </select>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="phone">Телефон</label>
-                        <input type="tel" id="phone" name="phone" required>
+                    <div class="filter-group">
+                        <label>Минимальная цена:</label>
+                        <input type="number" id="filter-min-price" class="filter-input" placeholder="0" min="0">
                     </div>
                     
-                    <div class="form-group">
-                        <label for="delivery-address">Адрес доставки</label>
-                        <textarea id="delivery-address" name="delivery-address" rows="3" required></textarea>
+                    <div class="filter-group">
+                        <label>Максимальная цена:</label>
+                        <input type="number" id="filter-max-price" class="filter-input" placeholder="1000000" min="0">
                     </div>
                     
-                    <div class="form-group">
-                        <label for="invoice-address">Адрес для счета-фактуры</label>
-                        <textarea id="invoice-address" name="invoice-address" rows="3"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Способ оплаты</label>
-                        <div>
-                            <input type="radio" id="cash" name="payment" value="cash" checked>
-                            <label for="cash">Наличными курьеру</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="bank" name="payment" value="bank">
-                            <label for="bank">Банковским переводом</label>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="software">Необходимое ПО</label>
-                        <textarea id="software" name="software" rows="3" placeholder="Укажите необходимое программное обеспечение"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn">Отправить заказ</button>
-                </form>
-            </div>
-        </div>
-    </section>
+                    <button id="apply-filters" class="btn btn-secondary">
+                        <i class="fas fa-search"></i> Применить
+                    </button>
+                    <button id="clear-filters" class="btn btn-outline">
+                        <i class="fas fa-times"></i> Сбросить
+                    </button>
+                </div>
 
-    <!-- Статус заказа -->
-    <section id="status" class="order-status">
-        <div class="container">
-            <h2 class="section-title">Проверка статуса заказа</h2>
-            <div class="status-container">
-                <div class="status-check">
-                    <input type="text" placeholder="Введите номер заказа">
-                    <button>Проверить</button>
+                <!-- Форма оформления заказа -->
+                <div id="new-order-form" class="hidden">
+                    <h3><i class="fas fa-shopping-cart"></i> Оформление заказа</h3>
+                    <form id="add-order-form">
+                        <div class="form-group">
+                            <label>Выбранный компьютер:</label>
+                            <input type="text" id="selected-computer" disabled class="disabled-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Необходимое ПО (через запятую):</label>
+                            <textarea name="software" rows="3" placeholder="Например: Windows 11 Pro, Microsoft Office, Photoshop"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Адрес доставки:</label>
+                            <input type="text" name="deliveryAddress" required placeholder="Город, улица, дом, квартира">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Способ оплаты:</label>
+                            <select name="paymentMethod" required>
+                                <option value="">Выберите способ оплаты</option>
+                                <option value="cash">Наличные курьеру</option>
+                                <option value="bank">Банковский перевод</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-check"></i> Подтвердить заказ
+                            </button>
+                            <button type="button" id="cancel-order" class="btn btn-outline">
+                                <i class="fas fa-times"></i> Отмена
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Информация для клиентов -->
+                <div id="client-info" class="info-box hidden">
+                    <h3><i class="fas fa-info-circle"></i> Информация</h3>
+                    <p>Для оформления заказа:</p>
+                    <ol>
+                        <li>Выберите компьютер из каталога</li>
+                        <li>Заполните форму заказа</li>
+                        <li>Ожидайте подтверждения от менеджера</li>
+                        <li>Отслеживайте статус заказа</li>
+                    </ol>
+                </div>
+
+                <!-- Информация для менеджеров -->
+                <div id="manager-info" class="info-box hidden">
+                    <h3><i class="fas fa-tasks"></i> Управление заказами</h3>
+                    <p>Функции менеджера:</p>
+                    <ul>
+                        <li>Просмотр всех заказов</li>
+                        <li>Изменение статусов</li>
+                        <li>Назначение себя менеджером заказа</li>
+                        <li>Добавление комментариев</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Основная область -->
+            <section class="content">
+                <div class="content-header">
+                    <h2><i class="fas fa-laptop"></i> Каталог компьютеров</h2>
+                    <div class="header-actions">
+                        <button id="my-orders-btn" class="btn btn-secondary hidden">
+                            <i class="fas fa-shopping-cart"></i> Мои заказы
+                        </button>
+                        <button id="back-to-catalog" class="btn btn-outline hidden">
+                            <i class="fas fa-arrow-left"></i> Назад в каталог
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="status-timeline">
-                    <div class="status-step completed">
-                        <h3>Заказ получен</h3>
-                        <p>Заказ принят и ожидает обработки</p>
-                    </div>
-                    <div class="status-step active">
-                        <h3>Ожидание оплаты</h3>
-                        <p>Ожидается поступление оплаты</p>
-                    </div>
-                    <div class="status-step">
-                        <h3>Поставлен в очередь</h3>
-                        <p>Заказ поставлен в очередь на сборку</p>
-                    </div>
-                    <div class="status-step">
-                        <h3>Собран</h3>
-                        <p>Компьютер собран и готов к отправке</p>
-                    </div>
-                    <div class="status-step">
-                        <h3>Отправлен</h3>
-                        <p>Заказ отправлен клиенту</p>
-                    </div>
-                    <div class="status-step">
-                        <h3>Выполнен</h3>
-                        <p>Заказ завершен</p>
-                    </div>
+                <!-- Контейнер для контента -->
+                <div id="orders-container" class="orders-grid">
+                    <!-- Здесь будет отображаться:
+                         - Каталог компьютеров (для гостей и клиентов)
+                         - Заказы клиента (при нажатии на "Мои заказы")
+                         - Все заказы (для менеджеров)
+                    -->
                 </div>
-            </div>
-        </div>
-    </section>
+                
+                <!-- Пагинация -->
+                <div class="pagination">
+                    <button id="load-more" class="btn btn-secondary">
+                        <i class="fas fa-arrow-down"></i> Показать еще
+                    </button>
+                </div>
+            </section>
+        </main>
 
-    <!-- Подвал -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Контакты</h3>
-                    <p>Телефон: +7 (XXX) XXX-XX-XX</p>
-                    <p>Email: info@computer-sales.ru</p>
+        <!-- Модальное окно для изменения статуса -->
+        <div id="edit-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Изменение статуса заказа</h3>
+                    <button class="close-modal">&times;</button>
                 </div>
-                <div class="footer-section">
-                    <h3>Часы работы</h3>
-                    <p>Пн-Пт: 9:00 - 18:00</p>
-                    <p>Сб-Вс: 10:00 - 16:00</p>
+                <div class="modal-body">
+                    <form id="edit-status-form">
+                        <input type="hidden" id="edit-order-id">
+                        
+                        <div class="form-group">
+                            <label>Текущий статус:</label>
+                            <input type="text" id="current-status" disabled class="disabled-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Новый статус:</label>
+                            <select id="new-status" required>
+                                <option value="">Выберите новый статус</option>
+                                <option value="pending">Ожидает оплаты</option>
+                                <option value="processing">В обработке</option>
+                                <option value="assembling">Собирается</option>
+                                <option value="installing">Установка ПО</option>
+                                <option value="shipped">Отправлен</option>
+                                <option value="delivered">Доставлен</option>
+                                <option value="completed">Выполнен</option>
+                                <option value="cancelled">Отменен</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Комментарий к изменению статуса:</label>
+                            <textarea id="status-comment" rows="3" placeholder="Укажите причину изменения статуса или дополнительную информацию"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Сохранить изменения
+                            </button>
+                            <button type="button" class="btn btn-outline cancel-modal">
+                                <i class="fas fa-times"></i> Отмена
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="footer-section">
-                    <h3>О нас</h3>
-                    <p>Продажа компьютеров с установкой ПО с 2010 года</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 АИС "Продажа компьютеров". Все права защищены.</p>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
